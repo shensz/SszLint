@@ -1,0 +1,34 @@
+apply plugin: 'java'
+
+def lint_version = "25.1.0"
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.tools.lint:lint-api:' + lint_version
+    compile 'com.android.tools.lint:lint-checks:' + lint_version
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.assertj:assertj-core:3.0.0'
+    testCompile 'org.mockito:mockito-core:1.9.5'
+    testCompile 'com.android.tools.lint:lint:' + lint_version
+    testCompile 'com.android.tools.lint:lint-tests:' + lint_version
+    testCompile 'com.android.tools:testutils:' + lint_version
+}
+
+jar {
+    manifest {
+        attributes("Lint-Registry": "com.shensz.android.lint.core.SszIssueRegistry")
+    }
+}
+
+defaultTasks 'assemble'
+
+/*
+ * rules for providing "lintCoreLibrary.jar"
+ */
+configurations {
+    lintJarOutput
+}
+
+dependencies {
+    lintJarOutput files(jar)
+}
