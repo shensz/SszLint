@@ -15,6 +15,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         testLog();
         testHashMap();
+        int i = 3;
+    }
+
+    private void go(int k){
+
     }
 
     private void testLog() {

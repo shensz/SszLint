@@ -11,15 +11,12 @@ public class LogDetectorTest extends SszLintDetectorTest {
     }
 
     public void testCase1() throws Exception {
-        String file1 = "log/fake/Log.java";
-        String file2 = "log/LogCase1.java";
-        assertResultError(lintFiles(file1, file2), 1);
+        String file = "log/LogCase1.java";
+        System.out.print(lintFiles(file));
     }
 
     public void testCase2() throws Exception {
-        String file1 = "log/fake/System.java";
-        String file2 = "log/fake/PrintStream.java";
-        String file3 = "log/LogCase2.java";
-        assertResultError(lintFiles(file1, file2, file3), 1);
+        String file = "log/LogCase2.java";
+        System.out.print(lintFiles(file));
     }
 }
