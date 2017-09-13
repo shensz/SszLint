@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.meituan.android.lint.demo.R;
-
 import java.util.HashMap;
 import java.util.Map;
 

@@ -50,9 +50,9 @@ public class LogDetector extends Detector implements Detector.JavaScanner{
                                 "为了防止在正式包打印log，请不要直接使用Log");
                         return true;
                     }
-                    if (node.toString().startsWith("System.out.println")) {
+                    if (node.toString().startsWith("System.out.print")) {
                         context.report(ISSUE, node, context.getLocation(node),
-                                "为了防止在正式包打印log，请不要直接使用System.out.println");
+                                "为了防止在正式包打印log，请不要直接使用System.out.print");
                         return true;
                     }
                 }
